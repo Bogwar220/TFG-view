@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">TFG</string>
+    <string name="tvNuevo">Nuevo Usuario</string>
+    <string name="tvNombre">Nombre de usuario:</string>
+    <string name="tvEdad">Fecha de nacimiento:</string>
+    <string name="tvPeso">Peso:</string>
+    <string name="tvAltura">Altura:</string>
+    <string name="cbMujer">Mujer</string>
+    <string name="cbHombre">Hombre</string>
+    <string name="tvPass">Contraseña</string>
+    <string name="btCrear">Crear</string>
+    <string name="btAtras">Atras</string>
+    <string name="tvLogin">Conectarse:</string>
+    <string name="btConectar">LogIn</string>
+    <string name="tvNuevoUsu">Nuevo Usuario?</string>
+    <string name="btNuevoUsu">SignUp</string>
+</resources>
