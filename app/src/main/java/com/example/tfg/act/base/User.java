@@ -105,8 +105,8 @@ public class User extends JSONObject  implements Parcelable {
         dest.writeInt(id);
         dest.writeString(username);
         dest.writeString(password);
-        dest.writeFloat(peso);
-        dest.writeFloat(altura);
+        dest.writeInt(peso);
+        dest.writeInt(altura);
         dest.writeInt(edad);
         dest.writeInt(sexo);
     }

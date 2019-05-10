@@ -16,6 +16,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.tfg.R;
+import com.example.tfg.act.Util.PassConverter;
 import com.example.tfg.act.activities.Conectado;
 import com.example.tfg.act.activities.Creacion;
 import com.example.tfg.act.base.User;
@@ -28,6 +29,8 @@ import static com.example.tfg.act.Util.Constantes.server;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private RequestQueue requestQueue;
+
+    private User user = new User();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,7 +59,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 EditText etUser = findViewById(R.id.etUser);
                 EditText etPass = findViewById(R.id.etPass);
 
-                String endPoint = "?username="+etUser.getText().toString()+"&password="+etPass.getText().toString();
+                String pass = etPass.getText().toString();
+
+                pass = PassConverter.passConverter(pass);
+
+                String endPoint = "?username="+etUser.getText().toString()+"&password="+pass;
                 String url = server + "/user";
                 url = url + endPoint;
 
@@ -72,7 +79,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                     Log.e("Rest Response", response.toString());
 
                                     JSONObject jsonUser = new JSONObject(String.valueOf(response));
-                                    User user = new User();
                                     user.setId(jsonUser.getInt("id"));
                                     user.setUsername(jsonUser.getString("username"));
                                     user.setPassword(jsonUser.getString("password"));
@@ -107,7 +113,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btSignIn:
 
                 startActivity(new Intent(this, Creacion.class));
-
                 break;
                 //---DELETE---
 //                EditText etUserDel = findViewById(R.id.etUser);

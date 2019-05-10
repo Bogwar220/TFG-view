@@ -45,10 +45,6 @@ public class Conectado extends AppCompatActivity implements View.OnClickListener
     public void onClick(View v) {
         switch(v.getId()){
             case R.id.btConf:
-//                Intent intent = new Intent(MainActivity.this, Conectado.class);
-//                intent.putExtra("user", user);
-//                startActivity(intent);
-
                 Intent intent = new Intent(Conectado.this, ConfigUser.class);
                 intent.putExtra("user", user);
                 startActivity(intent);

@@ -18,9 +18,13 @@ import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.tfg.R;
 import com.example.tfg.act.MainActivity;
+import com.example.tfg.act.Util.PassConverter;
 
 import org.json.JSONObject;
 
+import java.math.BigInteger;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
@@ -55,6 +59,7 @@ public class Creacion extends AppCompatActivity implements View.OnClickListener 
     private void botones(){
         Button btCrear = findViewById(R.id.btCrear);
         btCrear.setOnClickListener(this);
+
         Button btAtras = findViewById(R.id.btDesconect);
         btAtras.setOnClickListener(this);
     }
@@ -78,8 +83,6 @@ public class Creacion extends AppCompatActivity implements View.OnClickListener 
                 RadioButton rbHombre = findViewById(R.id.rbHombre);
                 rbMujer.setOnClickListener(this);
                 rbHombre.setOnClickListener(this);
-
-                sexo = 0;
 
                 //condiciones username
                 if (etUsername.getText().toString().equals("")) {
@@ -151,7 +154,8 @@ public class Creacion extends AppCompatActivity implements View.OnClickListener 
                     return;
                 }
 
-                if(rbHombre.isSelected())
+                // no cambia el sexo
+                if(rbHombre.isChecked())
                     sexo = 1;
 
                 if(etPass.getText().toString().equals(etConfPass.getText().toString())) {
@@ -198,9 +202,12 @@ public class Creacion extends AppCompatActivity implements View.OnClickListener 
                         return;
                     }
 
+                    String pass = etPass.getText().toString();
+                    pass = PassConverter.passConverter(pass);
+
                     Map<String, String> params = new HashMap<>();
                     params.put("username", etUsername.getText().toString());
-                    params.put("password", etPass.getText().toString());
+                    params.put("password", pass);
                     params.put("peso" , etPeso.getText().toString());
                     params.put("altura", etAltura.getText().toString());
                     params.put("edad", String.valueOf(age));

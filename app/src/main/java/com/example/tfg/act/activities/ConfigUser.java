@@ -1,6 +1,7 @@
 package com.example.tfg.act.activities;
 
 import android.content.Intent;
+import android.os.Parcelable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -59,6 +60,7 @@ public class ConfigUser extends AppCompatActivity implements View.OnClickListene
         btChangePass.setOnClickListener(this);
 
         Button btChange = findViewById(R.id.btChange);
+        btChange.setOnClickListener(this);
     }
 
     @Override
