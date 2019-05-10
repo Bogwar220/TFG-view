@@ -1,11 +1,13 @@
 package com.example.tfg.act;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -14,17 +16,18 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.tfg.R;
-import com.google.gson.JsonObject;
+import com.example.tfg.act.activities.Conectado;
+import com.example.tfg.act.activities.Creacion;
+import com.example.tfg.act.base.User;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.util.HashMap;
-import java.util.Map;
+import static com.example.tfg.act.Util.Constantes.server;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private String server = "http://192.168.34.18:8080";
-    private String url = server + "/user";
+    private RequestQueue requestQueue;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +48,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
 
-
         switch (v.getId()){
 
             case R.id.btLogIn:
@@ -54,10 +56,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 EditText etUser = findViewById(R.id.etUser);
                 EditText etPass = findViewById(R.id.etPass);
 
-                String endPoint = "?nombre="+etUser.getText().toString()+"&pass="+etPass.getText().toString();
+                String endPoint = "?username="+etUser.getText().toString()+"&password="+etPass.getText().toString();
+                String url = server + "/user";
                 url = url + endPoint;
 
-                RequestQueue requestQueue = Volley.newRequestQueue(this);
+                requestQueue = Volley.newRequestQueue(this);
                 JsonObjectRequest objectRequest = new JsonObjectRequest(
                         Request.Method.GET,
                         url,
@@ -65,52 +68,47 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         new Response.Listener<JSONObject>() {
                             @Override
                             public void onResponse(JSONObject response) {
-                                Log.e("Rest Response", response.toString());
+                                try {
+                                    Log.e("Rest Response", response.toString());
+
+                                    JSONObject jsonUser = new JSONObject(String.valueOf(response));
+                                    User user = new User();
+                                    user.setId(jsonUser.getInt("id"));
+                                    user.setUsername(jsonUser.getString("username"));
+                                    user.setPassword(jsonUser.getString("password"));
+                                    user.setPeso(jsonUser.getInt("peso"));
+                                    user.setAltura(jsonUser.getInt("altura"));
+                                    user.setEdad(jsonUser.getInt("edad"));
+                                    user.setSexo(jsonUser.getInt("sexo"));
+
+                                    Toast.makeText(MainActivity.this, user.getUsername() + " connectado", Toast.LENGTH_SHORT).show();
+
+                                    Intent intent = new Intent(MainActivity.this, Conectado.class);
+                                    intent.putExtra("user", user);
+                                    startActivity(intent);
+
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
+                                }
                             }
                         },
                         new Response.ErrorListener() {
                             @Override
                             public void onErrorResponse(VolleyError error) {
-                                Log.e("Rest Response" , error.toString());
+                                Log.e("Rest Response", error.toString());
+                                Toast.makeText(MainActivity.this, "Server error", Toast.LENGTH_SHORT).show();
                             }
                         }
                 );
 
                 requestQueue.add(objectRequest);
+
                 break;
             case R.id.btSignIn:
 
-                //---PUT---
-                EditText etUserPut = findViewById(R.id.etUser);
-                EditText etPassPut = findViewById(R.id.etPass);
+                startActivity(new Intent(this, Creacion.class));
 
-                Map<String, String> params = new HashMap<>();
-                params.put("nombre",etUserPut.getText().toString());
-                params.put("password",etPassPut.getText().toString());
-
-                JSONObject usuario = new JSONObject(params);
-
-                RequestQueue requestQueueAdd = Volley.newRequestQueue(this);
-                JsonObjectRequest objectRequestAdd = new JsonObjectRequest(
-                        Request.Method.PUT,
-                        url,
-                        usuario,
-                        new Response.Listener<JSONObject>() {
-                            @Override
-                            public void onResponse(JSONObject response) {
-                                Log.e("Rest Response", response.toString());
-                            }
-                        },
-                        new Response.ErrorListener() {
-                            @Override
-                            public void onErrorResponse(VolleyError error) {
-                                Log.e("Rest Response" , error.toString());
-                            }
-                        }
-                );
-                requestQueueAdd.add(objectRequestAdd);
-
-
+                break;
                 //---DELETE---
 //                EditText etUserDel = findViewById(R.id.etUser);
 //
@@ -137,38 +135,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //                );
 //
 //                requestQueueDel.add(objectRequestDel);
-
-                //---POST---
-//                EditText etUserAdd = findViewById(R.id.etUser);
-//                EditText etPassAdd = findViewById(R.id.etPass);
-//
-//                Map<String, String> params = new HashMap<>();
-//                params.put ("nombre", etUserAdd.getText().toString());
-//                params.put ("password", etPassAdd.getText().toString());
-//
-//                JSONObject usuario = new JSONObject(params);
-//
-//                RequestQueue requestQueueAdd = Volley.newRequestQueue(this);
-//                JsonObjectRequest objectRequestAdd = new JsonObjectRequest(
-//                        Request.Method.POST,
-//                        url,
-//                        usuario,
-//                        new Response.Listener<JSONObject>() {
-//                            @Override
-//                            public void onResponse(JSONObject response) {
-//                                Log.e("Rest Response", response.toString());
-//                            }
-//                        },
-//                        new Response.ErrorListener() {
-//                            @Override
-//                            public void onErrorResponse(VolleyError error) {
-//                                Log.e("Rest Response" , error.toString());
-//                            }
-//                        }
-//                );
-//                requestQueueAdd.add(objectRequestAdd);
-
-                break;
         }
     }
 }
