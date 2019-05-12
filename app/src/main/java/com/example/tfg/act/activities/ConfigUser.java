@@ -74,6 +74,9 @@ public class ConfigUser extends AppCompatActivity implements View.OnClickListene
 
             case R.id.btChangePass:
                 //esto va a empezar un nuevo activity
+                Intent intent1 = new Intent(ConfigUser.this, ConfigPass.class);
+                intent1.putExtra("user", user);
+                startActivity(intent1);
                 break;
 
             case R.id.btChange:
