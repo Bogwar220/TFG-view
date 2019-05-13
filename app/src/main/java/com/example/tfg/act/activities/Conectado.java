@@ -51,6 +51,9 @@ public class Conectado extends AppCompatActivity implements View.OnClickListener
                 break;
 
             case R.id.btEmpezar:
+                Intent intent1 = new Intent(Conectado.this, Calendar.class);
+                intent1.putExtra("user", user);
+                startActivity(intent1);
                 break;
 
             case R.id.btDesconect:
