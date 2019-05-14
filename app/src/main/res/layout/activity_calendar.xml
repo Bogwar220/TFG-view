@@ -15,6 +15,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
             android:orientation="horizontal">
 
             <TextView
@@ -38,8 +40,8 @@
             android:id="@+id/LinearLayout2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="50dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="25dp"
             android:layout_marginRight="200dp"
             android:orientation="horizontal">
 
@@ -54,7 +56,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="25dp"
             android:orientation="vertical">
 
             <CalendarView
@@ -62,14 +64,27 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
-            <Button
-                android:id="@+id/btStart"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="50dp"
-                android:layout_marginTop="50dp"
-                android:layout_marginRight="50dp"
-                android:text="Emepzar Actividad" />
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btStart"
+                    android:layout_width="181dp"
+                    android:layout_height="wrap_content"
+                    android:text="Emepzar Actividad" />
+
+                <Button
+                    android:id="@+id/btAtras"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/btAtras" />
+            </LinearLayout>
+
         </LinearLayout>
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>
