@@ -16,7 +16,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.tfg.R;
-import com.example.tfg.act.Util.PassConverter;
+import com.example.tfg.act.Util.Util;
 import com.example.tfg.act.activities.Conectado;
 import com.example.tfg.act.activities.Creacion;
 import com.example.tfg.act.base.User;
@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 String pass = etPass.getText().toString();
 
-                pass = PassConverter.passConverter(pass);
+                pass = Util.passConverter(pass);
 
                 String endPoint = "?username="+etUser.getText().toString()+"&password="+pass;
                 String url = server + "/user";

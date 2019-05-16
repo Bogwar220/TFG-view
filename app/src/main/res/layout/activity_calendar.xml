@@ -60,7 +60,7 @@
             android:orientation="vertical">
 
             <CalendarView
-                android:id="@+id/calendarView"
+                android:id="@+id/cvCalendar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
@@ -72,13 +72,13 @@
                 android:orientation="horizontal">
 
                 <Button
-                    android:id="@+id/btStart"
+                    android:id="@+id/btStartCalendar"
                     android:layout_width="181dp"
                     android:layout_height="wrap_content"
                     android:text="Emepzar Actividad" />
 
                 <Button
-                    android:id="@+id/btAtras"
+                    android:id="@+id/btAtrasCalendar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"

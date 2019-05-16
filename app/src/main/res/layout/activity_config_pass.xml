@@ -74,7 +74,7 @@
                 android:text="Cambiar" />
 
             <Button
-                android:id="@+id/btAtras"
+                android:id="@+id/btAtrasConfigPass"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"

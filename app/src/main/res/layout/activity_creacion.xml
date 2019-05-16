@@ -227,7 +227,7 @@
                 android:text="Crear" />
 
             <Button
-                android:id="@+id/btDesconect"
+                android:id="@+id/btAtrasCreacion"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"

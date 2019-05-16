@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".act.activities.Calendar"></activity>
+        <activity android:name=".act.activities.ListaEjercicios"></activity>
+        <activity android:name=".act.activities.Calendar" />
         <activity android:name=".act.activities.ConfigPass" />
         <activity android:name=".act.activities.ConfigUser" />
         <activity android:name=".act.activities.Conectado" />

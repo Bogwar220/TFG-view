@@ -1,7 +1,6 @@
 package com.example.tfg.act.activities;
 
 import android.content.Intent;
-import android.os.Parcelable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -53,7 +52,7 @@ public class ConfigUser extends AppCompatActivity implements View.OnClickListene
     }
 
     private void botones(){
-        Button btAtras = findViewById(R.id.btAtras);
+        Button btAtras = findViewById(R.id.btAtrasConfigUser);
         btAtras.setOnClickListener(this);
 
         Button btChangePass = findViewById(R.id.btChangePass);
@@ -66,7 +65,7 @@ public class ConfigUser extends AppCompatActivity implements View.OnClickListene
     @Override
     public void onClick(View v) {
         switch(v.getId()){
-            case R.id.btAtras:
+            case R.id.btAtrasConfigUser:
                 Intent intent = new Intent(ConfigUser.this, Conectado.class);
                 intent.putExtra("user", user);
                 startActivity(intent);

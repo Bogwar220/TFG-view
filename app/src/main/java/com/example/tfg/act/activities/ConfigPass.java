@@ -16,7 +16,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.tfg.R;
-import com.example.tfg.act.Util.PassConverter;
+import com.example.tfg.act.Util.Util;
 import com.example.tfg.act.base.User;
 
 import org.json.JSONObject;
@@ -45,7 +45,7 @@ public class ConfigPass extends AppCompatActivity implements View.OnClickListene
 
     private void botones(){
         Button btCambiarPass = findViewById(R.id.btCambiarPass);
-        Button btAtras = findViewById(R.id.btAtras);
+        Button btAtras = findViewById(R.id.btAtrasConfigPass);
         btCambiarPass.setOnClickListener(this);
         btAtras.setOnClickListener(this);
     }
@@ -58,7 +58,7 @@ public class ConfigPass extends AppCompatActivity implements View.OnClickListene
                 EditText etNewPass = findViewById(R.id.etNewPass);
                 EditText etNewPassConf = findViewById(R.id.etNewPassConf);
 
-                if(!PassConverter.passConverter(etActPass.getText().toString()).equals(user.getPassword())){
+                if(!Util.passConverter(etActPass.getText().toString()).equals(user.getPassword())){
                     Toast.makeText(this, "La contraseña actual no es la verdadera", Toast.LENGTH_SHORT).show();
                     return;
                 }
@@ -75,7 +75,7 @@ public class ConfigPass extends AppCompatActivity implements View.OnClickListene
 
                 Map<String, String> params = new HashMap<>();
                 params.put("id", String.valueOf(user.getId()));
-                params.put("password", PassConverter.passConverter(etNewPassConf.getText().toString()));
+                params.put("password", Util.passConverter(etNewPassConf.getText().toString()));
 
                 JSONObject usuario = new JSONObject(params);
 
@@ -105,7 +105,7 @@ public class ConfigPass extends AppCompatActivity implements View.OnClickListene
                 requestQueue.add(objectRequest);
 
                 break;
-            case R.id.btAtras:
+            case R.id.btAtrasConfigPass:
                 Intent intent = new Intent(ConfigPass.this, ConfigUser.class);
                 intent.putExtra("user", user);
                 startActivity(intent);

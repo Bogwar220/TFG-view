@@ -18,13 +18,10 @@ import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.tfg.R;
 import com.example.tfg.act.MainActivity;
-import com.example.tfg.act.Util.PassConverter;
+import com.example.tfg.act.Util.Util;
 
 import org.json.JSONObject;
 
-import java.math.BigInteger;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
@@ -60,7 +57,7 @@ public class Creacion extends AppCompatActivity implements View.OnClickListener 
         Button btCrear = findViewById(R.id.btCrear);
         btCrear.setOnClickListener(this);
 
-        Button btAtras = findViewById(R.id.btDesconect);
+        Button btAtras = findViewById(R.id.btAtrasCreacion);
         btAtras.setOnClickListener(this);
     }
 
@@ -203,7 +200,7 @@ public class Creacion extends AppCompatActivity implements View.OnClickListener 
                     }
 
                     String pass = etPass.getText().toString();
-                    pass = PassConverter.passConverter(pass);
+                    pass = Util.passConverter(pass);
 
                     Map<String, String> params = new HashMap<>();
                     params.put("username", etUsername.getText().toString());
@@ -245,7 +242,7 @@ public class Creacion extends AppCompatActivity implements View.OnClickListener 
                 }
                 break;
 
-            case R.id.btDesconect:
+            case R.id.btAtrasCreacion:
 
                 startActivity(new Intent(this,MainActivity.class));
                 break;

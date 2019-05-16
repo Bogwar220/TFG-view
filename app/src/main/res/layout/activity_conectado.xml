@@ -40,7 +40,7 @@
             android:text="Empezar Entreno" />
 
         <Button
-            android:id="@+id/btDesconect"
+            android:id="@+id/btDesconnect"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="50dp"
