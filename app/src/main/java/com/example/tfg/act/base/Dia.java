@@ -10,6 +10,10 @@ public class Dia extends JSONObject implements Parcelable {
     private String nombre;
     private Semana semana;
 
+    public Dia(){
+
+    }
+
     public int getId() {
         return id;
     }
@@ -34,7 +38,7 @@ public class Dia extends JSONObject implements Parcelable {
         this.semana = semana;
     }
 
-    protected Dia(Parcel in) {
+    public Dia(Parcel in) {
         id = in.readInt();
         nombre = in.readString();
         semana = in.readParcelable(Semana.class.getClassLoader());

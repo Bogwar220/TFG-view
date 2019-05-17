@@ -18,6 +18,7 @@ import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.tfg.R;
 import com.example.tfg.act.Util.Util;
+import com.example.tfg.act.base.Dia;
 import com.example.tfg.act.base.Semana;
 import com.example.tfg.act.base.SemanaUser;
 import com.example.tfg.act.base.User;
@@ -33,7 +34,7 @@ public class Calendar extends AppCompatActivity implements View.OnClickListener 
     private SemanaUser semUser;
     private User user;
     private Semana semana;
-    private int idSemUser;
+    private Dia dia;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,50 +75,106 @@ public class Calendar extends AppCompatActivity implements View.OnClickListener 
 
                                 int seleccionado = jsonSemUser.getInt("seleccionado");
 
-                                semana = new Semana();
-                                semana.setId(id_semana);
-                                semana.setNombre(nombre_semana);
-
                                 if(seleccionado == 1){
+
+                                    semana = new Semana();
+                                    semana.setId(id_semana);
+                                    semana.setNombre(nombre_semana);
+
                                     semUser = new SemanaUser();
-                                    semUser.setId(id);
                                     semUser.setSemana(semana);
                                     semUser.setUser(user);
+                                    semUser.setId(id);
+
                                     tvSemana.setText(semUser.getSemana().getNombre());
-                                    idSemUser = semUser.getId();
 
-                                    Log.e("idSemUser",String.valueOf(idSemUser));  //Lo pilla como 0?
-                                    //Log.e("semana" ,semUser.getSemana().getNombre());
+                                    final int idSemUser = semUser.getId();
 
-                                    //getDia verificar si el usuario tiene algo y añadirlo en caso de que no
-                                    String endpoint = "/dia?idSemUser=" + String.valueOf(idSemUser);
-                                    String urlDia = new String();
-                                    urlDia = server + endpoint;
+                                    dia = new Dia();
+                                    dia.setSemana(semana);
 
-                                    RequestQueue requestQueue = Volley.newRequestQueue(Calendar.this);
-                                    JsonArrayRequest arrayRequest = new JsonArrayRequest(
-                                            Request.Method.GET,
-                                            urlDia,
-                                            null,
-                                            new Response.Listener<JSONArray>() {
-                                                @Override
-                                                public void onResponse(JSONArray response) {
-                                                    Log.e("Rest Response getDia", response.toString());
-                                                }
-                                            },
-                                            new Response.ErrorListener() {
-                                                @Override
-                                                public void onErrorResponse(VolleyError error) {
-                                                    Log.e("Rest Response getDia", error.toString());
-                                                }
+                                    CalendarView cvCalendar =findViewById(R.id.cvCalendar);
+                                    cvCalendar.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
+                                        @Override
+                                        public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
+                                            String date = year + "-" + month + "-" + dayOfMonth;
+                                            int day = Util.getDayOfWeek(date);
+                                            String dayOfWeek = new String();
+                                            switch (day){
+                                                case 1:
+                                                    dayOfWeek = "Martes";
+                                                    break;
+                                                case 2:
+                                                    dayOfWeek = "Miercoles";
+                                                    break;
+                                                case 3:
+                                                    dayOfWeek = "Jueves";
+                                                    break;
+                                                case 4:
+                                                    dayOfWeek = "Viernes";
+                                                    break;
+                                                case 5:
+                                                    dayOfWeek = "Sabado";
+                                                    break;
+                                                case 6:
+                                                    dayOfWeek = "Domingo";
+                                                    break;
+                                                case 7:
+                                                    dayOfWeek = "Lunes";
+                                                    break;
                                             }
-                                    );
-                                    requestQueue.add(arrayRequest);
+
+                                            dia.setNombre(dayOfWeek);
+
+                                            String endpoint = "/dia?idSemUser=" + String.valueOf(idSemUser);
+                                            String urlDia = server + endpoint;
+
+                                            RequestQueue requestQueue = Volley.newRequestQueue(Calendar.this);
+                                            JsonArrayRequest arrayRequest = new JsonArrayRequest(
+                                                    Request.Method.GET,
+                                                    urlDia,
+                                                    null,
+                                                    new Response.Listener<JSONArray>() {
+                                                        @Override
+                                                        public void onResponse(JSONArray response) {
+                                                            Log.e("Rest Response getDia", response.toString());
+                                                            try {
+                                                                for(int i=0; i<response.length(); i++){
+                                                                    JSONObject jsonDia = response.getJSONObject(i);
+                                                                    int idDia = jsonDia.getInt("id");
+                                                                    String nombreDia = jsonDia.getString("nombre");
+
+                                                                    JSONObject jsonSemana = jsonDia.getJSONObject("semana");
+                                                                    int idSemana = jsonSemana.getInt("id");
+
+                                                                    if(nombreDia.equals(dia.getNombre()) && idSemana == dia.getSemana().getId()){
+                                                                        dia.setId(idDia);
+                                                                    }
+                                                                }
+                                                            } catch (JSONException e) {
+                                                                e.printStackTrace();
+                                                            }
+                                                        }
+                                                    },
+                                                    new Response.ErrorListener() {
+                                                        @Override
+                                                        public void onErrorResponse(VolleyError error) {
+                                                            Log.e("Rest Response getDia", error.toString());
+                                                        }
+                                                    }
+                                            );
+                                            requestQueue.add(arrayRequest);
+                                            //----!!!!------------
+                                            Log.e("diaId",String.valueOf(dia.getId()));
+                                            Log.e("diaNombre",dia.getNombre());
+                                            Log.e("diaSemanaNombre",dia.getSemana().getNombre());
+                                        }
+                                    });
 
                                     //getEjercicios verificar si el usuario tiene algo y añadirlo en caso de que no
                                     String urlEj = server + "/ej";
-                                    requestQueue = Volley.newRequestQueue(Calendar.this);
-                                    arrayRequest = new JsonArrayRequest(
+                                    RequestQueue requestQueue = Volley.newRequestQueue(Calendar.this);
+                                    JsonArrayRequest arrayRequest = new JsonArrayRequest(
                                             Request.Method.GET,
                                             urlEj,
                                             null,
@@ -151,18 +208,6 @@ public class Calendar extends AppCompatActivity implements View.OnClickListener 
         );
         requestQueue.add(arrayRequest);
 
-        // pruebas con calendarView ------------------------------------
-        CalendarView cvCalendar =findViewById(R.id.cvCalendar);
-
-        cvCalendar.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
-            @Override
-            public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
-                String date = year + "-" + month + "-" + dayOfMonth;
-                int day = Util.getDayOfWeek(date);
-                Log.e("fecha dia", String.valueOf(day));
-            }
-        });
-
         botones();
     }
 
@@ -183,7 +228,10 @@ public class Calendar extends AppCompatActivity implements View.OnClickListener 
 
                 break;
             case R.id.btStartCalendar:
-
+                Intent intent1 = new Intent(Calendar.this, ListaEjercicios.class);
+                intent1.putExtra("user", user);
+                intent1.putExtra("dia", dia);
+                startActivity(intent1);
                 break;
             case R.id.btAtrasCalendar:
                 Intent intent = new Intent(Calendar.this, Conectado.class);
