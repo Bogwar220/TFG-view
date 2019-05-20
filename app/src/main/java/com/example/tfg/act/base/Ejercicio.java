@@ -10,6 +10,10 @@ public class Ejercicio extends JSONObject implements Parcelable {
     private String nombre;
     private String descripcion;
 
+    public Ejercicio(){
+
+    }
+
     public int getId() {
         return id;
     }

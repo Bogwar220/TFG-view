@@ -7,6 +7,7 @@ import org.json.JSONObject;
 
 public class SemanaUser extends JSONObject implements Parcelable {
     private int id;
+    private int seleccionado;
     private Semana semana;
     private User user;
 
@@ -14,14 +15,16 @@ public class SemanaUser extends JSONObject implements Parcelable {
 
     }
 
-    public SemanaUser(int id, Semana semana, User user) {
+    public SemanaUser(int id, int seleccionado, Semana semana, User user) {
         this.id = id;
+        this.seleccionado = seleccionado;
         this.semana = semana;
         this.user = user;
     }
 
     protected SemanaUser(Parcel in) {
         id = in.readInt();
+        seleccionado = in.readInt();
         semana = in.readParcelable(Semana.class.getClassLoader());
         user = in.readParcelable(User.class.getClassLoader());
     }
@@ -37,6 +40,14 @@ public class SemanaUser extends JSONObject implements Parcelable {
             return new SemanaUser[size];
         }
     };
+
+    public int getSeleccionado() {
+        return seleccionado;
+    }
+
+    public void setSeleccionado(int seleccionado) {
+        this.seleccionado = seleccionado;
+    }
 
     public int getId() {
         return id;
@@ -70,6 +81,7 @@ public class SemanaUser extends JSONObject implements Parcelable {
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeInt(id);
+        dest.writeInt(seleccionado);
         dest.writeParcelable(semana, flags);
         dest.writeParcelable(user, flags);
     }

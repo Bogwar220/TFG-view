@@ -225,7 +225,11 @@ public class Calendar extends AppCompatActivity implements View.OnClickListener 
     public void onClick(View v) {
         switch(v.getId()){
             case R.id.btEditar:
-
+                Intent intent2 = new Intent(Calendar.this, EditarSemana.class);
+                intent2.putExtra("user", user);
+                intent2.putExtra("semana", semana);
+                intent2.putExtra("semUser", semUser);
+                startActivity(intent2);
                 break;
             case R.id.btStartCalendar:
                 Intent intent1 = new Intent(Calendar.this, ListaEjercicios.class);

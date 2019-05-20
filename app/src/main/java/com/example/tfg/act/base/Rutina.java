@@ -11,6 +11,10 @@ public class Rutina extends JSONObject implements Parcelable {
     private Ejercicio ejercicio;
     private Dia dia;
 
+    public Rutina(){
+
+    }
+
     public int getId() {
         return id;
     }
