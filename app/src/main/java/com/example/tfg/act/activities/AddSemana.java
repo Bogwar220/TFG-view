@@ -19,6 +19,7 @@ import com.example.tfg.act.base.Semana;
 import com.example.tfg.act.base.SemanaUser;
 import com.example.tfg.act.base.User;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.HashMap;
@@ -42,8 +43,6 @@ public class AddSemana extends AppCompatActivity implements View.OnClickListener
         semUser = intent.getParcelableExtra("semUser");
         semana = intent.getParcelableExtra("semana");
 
-        //TODO: 2 post 1 de semana solamente con el nombre y otro con el semanaUser
-
         botones();
     }
 
@@ -63,7 +62,8 @@ public class AddSemana extends AppCompatActivity implements View.OnClickListener
 
                 String url = server + "/semana";
 
-                Map<String, String> paramsSemana = new HashMap<>();
+                //post de semana
+                final Map<String, String> paramsSemana = new HashMap<>();
                 paramsSemana.put("nombre", String.valueOf(etNombre.getText()));
                 JSONObject jsonSemana = new JSONObject(paramsSemana);
 
@@ -87,16 +87,72 @@ public class AddSemana extends AppCompatActivity implements View.OnClickListener
                 );
                 requestQueue.add(objectRequest);
 
-                //TODO GET de semUser de este usuario con el nombre
+                //TODO get de semana por nombre y post de semUser con los 2
+                String endpoint = "/semanaPorNombre" + String.valueOf(etNombre.getText());
+                String urlSemanaPorNombre = server + endpoint;
 
-                Map<String, JSONObject> paramsSemUser = new HashMap<>();
+                RequestQueue requestQueue1 = Volley.newRequestQueue(this);
+                JsonObjectRequest objectRequest1 = new JsonObjectRequest(
+                        Request.Method.GET,
+                        urlSemanaPorNombre,
+                        null,
+                        new Response.Listener<JSONObject>() {
+                            @Override
+                            public void onResponse(JSONObject response) {
+                                try {
+                                    int idSemana = response.getInt("id");
+                                    Semana semana = new Semana();
+                                    semana.setId(idSemana);
 
-                Map<String, String> paramsUser = new HashMap<>();
-                paramsUser.put("id", String.valueOf(user.getId()));
-                JSONObject jsonUser = new JSONObject(paramsUser);
+                                    Map<String, String> paramsUser = new HashMap<>();
+                                    paramsUser.put("id", String.valueOf(user.getId()));
+                                    JSONObject jsonUser = new JSONObject(paramsUser);
 
-                paramsSemUser.put("user", jsonUser);
-                paramsSemUser.put("semana", jsonSemana);
+                                    Map<String, JSONObject> paramsSemUser = new HashMap<>();
+                                    paramsSemUser.put("user", jsonUser);
+                                    paramsSemUser.put("semana", response);
+                                    JSONObject jsonSemUser = new JSONObject(paramsSemUser);
+
+                                    String urlSemUser = server + "/semUser";
+                                    RequestQueue requestQueue2 = Volley.newRequestQueue(AddSemana.this);
+                                    JsonObjectRequest objectRequest2 = new JsonObjectRequest(
+                                            Request.Method.POST,
+                                            urlSemUser,
+                                            jsonSemUser,
+                                            new Response.Listener<JSONObject>() {
+                                                @Override
+                                                public void onResponse(JSONObject response) {
+
+                                                }
+                                            },
+                                            new Response.ErrorListener() {
+                                                @Override
+                                                public void onErrorResponse(VolleyError error) {
+                                                    
+                                                }
+                                            }
+                                    );
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                        },
+                        new Response.ErrorListener() {
+                            @Override
+                            public void onErrorResponse(VolleyError error) {
+
+                            }
+                        }
+                );
+
+//                Map<String, JSONObject> paramsSemUser = new HashMap<>();
+//
+//                Map<String, String> paramsUser = new HashMap<>();
+//                paramsUser.put("id", String.valueOf(user.getId()));
+//                JSONObject jsonUser = new JSONObject(paramsUser);
+//
+//                paramsSemUser.put("user", jsonUser);
+//                paramsSemUser.put("semana", jsonSemana);
                 break;
             case R.id.btAtrasAddSemana:
                 Intent intent7 = new Intent(AddSemana.this, EditarSemana.class);
