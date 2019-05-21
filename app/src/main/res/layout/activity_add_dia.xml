@@ -4,57 +4,67 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".act.activities.RutinaActivity">
+    tools:context=".act.activities.AddDia">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/tvEjercicioName"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="100dp"
+            android:layout_marginTop="10dp"
             android:gravity="center"
-            android:text="tvEjercicioName"
-            android:textSize="25dp" />
+            android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/tvRepeticiones"
+            <TextView
+                android:id="@+id/tvNombreDia"
+                android:layout_width="319dp"
+                android:layout_height="wrap_content"
+                android:text="tvSemanaName"
+                android:textSize="25dp" />
+
+        </LinearLayout>
+
+        <ListView
+            android:id="@+id/lvEjercicios"
             android:layout_width="match_parent"
+            android:layout_height="344dp"
+            android:layout_marginTop="10dp">
+
+        </ListView>
+
+        <Button
+            android:id="@+id/btAnadirEj"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="25dp"
-            android:layout_marginTop="25dp"
-            android:text="Repeticiones: tvRepeticiones"
-            android:textSize="25dp" />
-
-        <TextView
-            android:id="@+id/tvEjercicioDescripcion"
-            android:layout_width="match_parent"
-            android:layout_height="261dp"
-            android:layout_marginLeft="25dp"
-            android:layout_marginTop="25dp"
-            android:text="tvEjercicioDescripcion" />
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="15dp"
+            android:text="Anadir Otro Ejercicio" />
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="59dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginRight="25dp"
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/btHecho"
+                android:id="@+id/btAnadir"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Hecho" />
+                android:text="Guardar" />
 
             <Button
-                android:id="@+id/btAtras"
+                android:id="@+id/btAtrasAddDia"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/btAtras" />
         </LinearLayout>
+
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

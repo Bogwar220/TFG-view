@@ -21,7 +21,6 @@ import com.example.tfg.act.Util.AdapterRutinas;
 import com.example.tfg.act.base.Dia;
 import com.example.tfg.act.base.Ejercicio;
 import com.example.tfg.act.base.Rutina;
-import com.example.tfg.act.base.RutinaActivity;
 import com.example.tfg.act.base.User;
 
 import org.json.JSONArray;

@@ -51,7 +51,6 @@ public class Calendar extends AppCompatActivity implements View.OnClickListener 
         String endPoint = "?idUser="+user.getId();
         String url = server + "/semUser" + endPoint;
 
-        //TODO: no hace el enlace bien hay que darle 2 veces y no lo entiendo porque
         //get semana para enseñarla en la activity
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         JsonArrayRequest arrayRequest = new JsonArrayRequest(

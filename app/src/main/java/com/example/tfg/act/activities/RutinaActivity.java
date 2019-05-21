@@ -1,4 +1,4 @@
-package com.example.tfg.act.base;
+package com.example.tfg.act.activities;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -16,7 +16,9 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.tfg.R;
-import com.example.tfg.act.activities.ListaEjercicios;
+import com.example.tfg.act.base.Dia;
+import com.example.tfg.act.base.Rutina;
+import com.example.tfg.act.base.User;
 
 import org.json.JSONObject;
 
@@ -71,13 +73,13 @@ public class RutinaActivity extends AppCompatActivity implements View.OnClickLis
                 params.put("id", String.valueOf(rutina.getId()));
                 params.put("repeticiones",String.valueOf(rutina.getRepeticiones()));
 
-                JSONObject rutina = new JSONObject(params);
+                JSONObject jsonRutina = new JSONObject(params);
 
                 RequestQueue requestQueue = Volley.newRequestQueue(RutinaActivity.this);
                 JsonObjectRequest objectRequest = new JsonObjectRequest(
                         Request.Method.PUT,
                         url,
-                        rutina,
+                        jsonRutina,
                         new Response.Listener<JSONObject>() {
                             @Override
                             public void onResponse(JSONObject response) {
