@@ -53,6 +53,7 @@ public class ListaEjercicios extends AppCompatActivity implements View.OnClickLi
         TextView tvDiaName = findViewById(R.id.tvDiaName);
         tvDiaName.setText(dia.getNombre());
 
+        //get rutinas con idDia
         String endpoint = "/rut?idDia=" + String.valueOf(dia.getId());
         String urlRut = server + endpoint;
 

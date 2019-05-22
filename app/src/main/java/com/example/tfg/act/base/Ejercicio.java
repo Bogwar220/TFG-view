@@ -67,4 +67,9 @@ public class Ejercicio extends JSONObject implements Parcelable {
         dest.writeString(nombre);
         dest.writeString(descripcion);
     }
+
+    @Override
+    public String toString() {
+        return nombre;
+    }
 }

@@ -20,6 +20,13 @@ public class AdapterAddDia extends BaseAdapter {
     Context context;
     String[] nombres;
     ArrayList<Ejercicio> ejercicios;
+
+    public AdapterAddDia(Context context, String[] nombres, ArrayList<Ejercicio> ejercicios){
+        this.context = context;
+        this.nombres = nombres;
+        this.ejercicios = ejercicios;
+        inflater = (LayoutInflater) context.getSystemService(context.LAYOUT_INFLATER_SERVICE);
+    }
     @Override
     public int getCount() {
         return nombres.length;
