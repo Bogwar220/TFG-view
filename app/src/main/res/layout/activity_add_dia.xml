@@ -29,7 +29,6 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:text="tvSemanaName"
-                    android:textColor="#8c1ec0"
                     android:textSize="25dp" />
 
                 <Button
@@ -48,8 +47,7 @@
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="25dp"
                 android:background="#fff"
-                android:text="Todos los Ejercicios"
-                android:textColor="#8c1ec0" />
+                android:text="Todos los Ejercicios" />
 
             <Spinner
                 android:id="@+id/spEjercicios"
@@ -71,8 +69,6 @@
                     android:ems="10"
                     android:hint="Repeticiones"
                     android:inputType="number"
-                    android:textColor="#8c1ec0"
-                    android:textColorHint="#b07ec7"
                     android:textSize="25dp" />
 
                 <Button
@@ -89,8 +85,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="25dp"
                 android:background="#fff"
-                android:text="Tus ejercicios de este dia"
-                android:textColor="#8c1ec0" />
+                android:text="Tus ejercicios de este dia" />
 
             <ListView
                 android:id="@+id/lvEjercicios"

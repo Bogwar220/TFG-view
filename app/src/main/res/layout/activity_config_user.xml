@@ -26,7 +26,6 @@
                 android:layout_marginRight="25dp"
                 android:layout_weight="1"
                 android:gravity="center_horizontal"
-                android:textColor="#8c1ec0"
                 android:textSize="25dp" />
 
         </LinearLayout>
@@ -46,7 +45,6 @@
                 android:background="#ffffff"
                 android:gravity="center_horizontal|center_vertical"
                 android:text="Peso: "
-                android:textColor="#8c1ec0"
                 android:textSize="25dp"
                 android:textStyle="normal" />
 
@@ -59,8 +57,6 @@
                 android:gravity="center"
                 android:hint="Nuevo Peso"
                 android:inputType="number"
-                android:textColor="#8c1ec0"
-                android:textColorHint="#b07ec7"
                 android:textSize="25dp" />
 
             <TextView
@@ -71,7 +67,6 @@
                 android:background="#fff"
                 android:gravity="center"
                 android:text="Altura: "
-                android:textColor="#8c1ec0"
                 android:textSize="25dp"
                 android:textStyle="normal" />
 
@@ -84,8 +79,6 @@
                 android:gravity="center"
                 android:hint="Nueva Altura"
                 android:inputType="number"
-                android:textColor="#8c1ec0"
-                android:textColorHint="#b07ec7"
                 android:textSize="25dp" />
 
             <Button

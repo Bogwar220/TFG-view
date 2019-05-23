@@ -20,8 +20,7 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="tvNombreRutina"
-            android:textSize="25dp"
-            android:textColor="#8c1ec0"/>
+            android:textSize="25dp" />
 
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

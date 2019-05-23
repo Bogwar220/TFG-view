@@ -19,7 +19,6 @@
             android:layout_marginTop="30dp"
             android:gravity="center_horizontal|center_vertical"
             android:text="TextView"
-            android:textColor="#8c1ec0"
             android:textSize="25dp" />
 
         <Button

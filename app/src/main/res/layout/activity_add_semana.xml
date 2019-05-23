@@ -24,8 +24,6 @@
             android:gravity="center"
             android:hint="Nombre de la nueva rutina"
             android:inputType="textPersonName"
-            android:textColor="#8c1ec0"
-            android:textColorHint="#b07ec7"
             android:textSize="25dp" />
 
         <Button

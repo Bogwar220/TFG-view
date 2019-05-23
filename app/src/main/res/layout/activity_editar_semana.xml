@@ -27,8 +27,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="tvUser"
-                android:textSize="25dp"
-                android:textColor="#8c1ec0"/>
+                android:textSize="25dp" />
 
             <ImageButton
                 android:id="@+id/btAdd"

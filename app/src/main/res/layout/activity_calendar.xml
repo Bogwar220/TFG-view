@@ -26,7 +26,6 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="tvUsername"
-                android:textColor="#8c1ec0"
                 android:textSize="25dp" />
 
             <TextView
@@ -35,7 +34,6 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="tvSemanaName"
-                android:textColor="#8c1ec0"
                 android:textSize="25dp" />
         </LinearLayout>
 

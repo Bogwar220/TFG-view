@@ -18,7 +18,6 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="FatCat"
-            android:textColor="#8c1ec0"
             android:textSize="50dp" />
 
         <TextView

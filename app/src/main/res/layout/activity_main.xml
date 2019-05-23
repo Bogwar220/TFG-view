@@ -31,8 +31,6 @@
                 android:gravity="center_horizontal"
                 android:hint="Usuario"
                 android:inputType="textPersonName"
-                android:textColor="#8c1ec0"
-                android:textColorHint="#b07ec7"
                 android:textSize="25dp" />
         </LinearLayout>
 
@@ -54,8 +52,6 @@
                 android:gravity="center_horizontal|center_vertical"
                 android:hint="Contraseña"
                 android:inputType="textPassword"
-                android:textColor="#8c1ec0"
-                android:textColorHint="#b07ec7"
                 android:textSize="25dp" />
         </LinearLayout>
 

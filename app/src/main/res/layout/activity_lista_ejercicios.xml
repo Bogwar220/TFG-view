@@ -19,8 +19,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="25dp"
             android:text="tvDiaName"
-            android:textSize="25dp"
-            android:textColor="#8c1ec0"/>
+            android:textSize="25dp" />
 
         <ListView
             android:id="@+id/lvRutinas"
