@@ -19,7 +19,8 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="25dp"
             android:text="tvDiaName"
-            android:textSize="25dp" />
+            android:textSize="25dp"
+            android:background="@drawable/botones"/>
 
         <ListView
             android:id="@+id/lvRutinas"
@@ -39,7 +40,8 @@
                 android:layout_marginLeft="75dp"
                 android:layout_marginRight="75dp"
                 android:layout_weight="1"
-                android:text="@string/btAtras" />
+                android:text="@string/btAtras"
+                android:background="@drawable/botones"/>
         </LinearLayout>
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

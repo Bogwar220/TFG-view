@@ -18,7 +18,10 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="FatCat"
-            android:textSize="50dp" />
+            android:textSize="50dp"
+            android:background="@drawable/botones"
+            android:layout_marginLeft="100dp"
+            android:layout_marginRight="100dp"/>
 
         <TextView
             android:id="@+id/textView7"

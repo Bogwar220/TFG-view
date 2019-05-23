@@ -21,7 +21,8 @@
             android:layout_marginRight="50dp"
             android:gravity="center"
             android:text="Cambiar Contraseña"
-            android:textSize="25dp" />
+            android:textSize="25dp"
+            android:background="@drawable/botones"/>
 
         <EditText
             android:id="@+id/etActPass"
@@ -30,7 +31,7 @@
             android:layout_marginLeft="50dp"
             android:layout_marginTop="170dp"
             android:layout_marginRight="50dp"
-            android:background="#fff"
+            android:background="@drawable/botones"
             android:ems="10"
             android:gravity="center_horizontal"
             android:hint="Contraseña Actual"
@@ -44,7 +45,7 @@
             android:layout_marginLeft="50dp"
             android:layout_marginTop="25dp"
             android:layout_marginRight="50dp"
-            android:background="#fff"
+            android:background="@drawable/botones"
             android:ems="10"
             android:gravity="center_horizontal"
             android:hint="Nueva Contraseña"
@@ -58,7 +59,7 @@
             android:layout_marginLeft="50dp"
             android:layout_marginTop="25dp"
             android:layout_marginRight="50dp"
-            android:background="#fff"
+            android:background="@drawable/botones"
             android:ems="10"
             android:gravity="center_horizontal"
             android:hint="Confirmar Nueva Contraseña"
@@ -78,6 +79,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="@drawable/botones"
                 android:text="Cambiar" />
 
             <Button
@@ -85,6 +87,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="@drawable/botones"
                 android:text="@string/btAtras" />
         </LinearLayout>
     </LinearLayout>

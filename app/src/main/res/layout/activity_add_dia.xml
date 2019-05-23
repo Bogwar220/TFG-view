@@ -28,15 +28,18 @@
                     android:layout_width="224dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
+                    android:background="@drawable/botones"
                     android:text="tvSemanaName"
-                    android:textSize="25dp" />
+                    android:textSize="25dp"
+                    android:textStyle="bold" />
 
                 <Button
                     android:id="@+id/btAnadirEj"
                     android:layout_width="149dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"
-                    android:text="Anadir Otro Ejercicio" />
+                    android:text="Anadir Otro Ejercicio"
+                    android:background="@drawable/botones"/>
 
             </LinearLayout>
 
@@ -46,14 +49,15 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="25dp"
-                android:background="#fff"
-                android:text="Todos los Ejercicios" />
+                android:background="#8dbab3"
+                android:text="Todos los Ejercicios"
+                android:textStyle="bold" />
 
             <Spinner
                 android:id="@+id/spEjercicios"
                 android:layout_width="match_parent"
                 android:layout_height="51dp"
-                android:background="#fff" />
+                android:background="@drawable/botones" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -65,7 +69,7 @@
                     android:layout_width="252dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="#fff"
+                    style="@style/EditText.Login"
                     android:ems="10"
                     android:hint="Repeticiones"
                     android:inputType="number"
@@ -76,7 +80,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Guardar" />
+                    android:text="Guardar"
+                    android:background="@drawable/botones"/>
             </LinearLayout>
 
             <TextView
@@ -84,8 +89,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="25dp"
-                android:background="#fff"
-                android:text="Tus ejercicios de este dia" />
+                android:background="@drawable/botones"
+                android:text="Tus ejercicios de este dia"
+                android:textStyle="bold" />
 
             <ListView
                 android:id="@+id/lvEjercicios"
@@ -105,7 +111,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Siguiente" />
+                    android:text="Siguiente"
+                    android:background="@drawable/botones"/>
 
             </LinearLayout>
 

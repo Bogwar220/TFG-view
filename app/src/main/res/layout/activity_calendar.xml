@@ -26,7 +26,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="tvUsername"
-                android:textSize="25dp" />
+                android:textSize="25dp"
+                android:background="@drawable/botones"/>
 
             <TextView
                 android:id="@+id/tvSemana"
@@ -34,7 +35,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="tvSemanaName"
-                android:textSize="25dp" />
+                android:textSize="25dp"
+                android:background="@drawable/botones"/>
         </LinearLayout>
 
         <LinearLayout
@@ -51,7 +53,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Editar Rutinas" />
+                android:text="Editar Rutinas"
+                android:background="@drawable/botones"/>
         </LinearLayout>
 
         <LinearLayout
@@ -64,7 +67,7 @@
                 android:id="@+id/cvCalendar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#fff" />
+                android:background="@drawable/botones" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -77,14 +80,16 @@
                     android:id="@+id/btStartCalendar"
                     android:layout_width="181dp"
                     android:layout_height="wrap_content"
-                    android:text="Emepzar Actividad" />
+                    android:text="Emepzar Actividad"
+                    android:background="@drawable/botones"/>
 
                 <Button
                     android:id="@+id/btAtrasCalendar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="@string/btAtras" />
+                    android:text="@string/btAtras"
+                    android:background="@drawable/botones"/>
             </LinearLayout>
 
         </LinearLayout>

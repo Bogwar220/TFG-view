@@ -19,7 +19,8 @@
             android:layout_marginTop="30dp"
             android:gravity="center_horizontal|center_vertical"
             android:text="TextView"
-            android:textSize="25dp" />
+            android:textSize="25dp"
+            android:background="@drawable/botones"/>
 
         <Button
             android:id="@+id/btConf"
@@ -29,7 +30,8 @@
             android:layout_marginTop="150dp"
             android:layout_marginRight="50dp"
             android:text="Configuracion Usuario"
-            android:textSize="15dp" />
+            android:textSize="15dp"
+            android:background="@drawable/botones"/>
 
         <Button
             android:id="@+id/btEmpezar"
@@ -38,7 +40,8 @@
             android:layout_marginLeft="50dp"
             android:layout_marginTop="50dp"
             android:layout_marginRight="50dp"
-            android:text="Empezar Entreno" />
+            android:text="Empezar Entreno"
+            android:background="@drawable/botones"/>
 
         <Button
             android:id="@+id/btDesconnect"
@@ -47,6 +50,7 @@
             android:layout_marginLeft="50dp"
             android:layout_marginTop="50dp"
             android:layout_marginRight="50dp"
-            android:text="Desconectar" />
+            android:text="Desconectar"
+            android:background="@drawable/botones"/>
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

@@ -26,12 +26,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="#fff"
                 android:ems="10"
                 android:gravity="center_horizontal"
                 android:hint="Usuario"
                 android:inputType="textPersonName"
-                android:textSize="25dp" />
+                android:textSize="25dp"
+                android:background="#8dbab3"/>
         </LinearLayout>
 
         <LinearLayout
@@ -47,7 +47,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="#fff"
+                android:background="#8dbab3"
                 android:ems="10"
                 android:gravity="center_horizontal|center_vertical"
                 android:hint="Contraseña"
@@ -68,14 +68,16 @@
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:text="LogIn"
-                android:textSize="15sp" />
+                android:textSize="15sp"
+                android:background="@drawable/botones"/>
 
             <Button
                 android:id="@+id/btSignIn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="SignUp" />
+                android:text="SignUp"
+                android:background="@drawable/botones"/>
         </LinearLayout>
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

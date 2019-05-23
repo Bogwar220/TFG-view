@@ -19,7 +19,7 @@
             android:layout_marginLeft="25dp"
             android:layout_marginTop="200dp"
             android:layout_marginRight="25dp"
-            android:background="#fff"
+            android:background="@drawable/botones"
             android:ems="10"
             android:gravity="center"
             android:hint="Nombre de la nueva rutina"
@@ -33,7 +33,8 @@
             android:layout_marginLeft="50dp"
             android:layout_marginTop="25dp"
             android:layout_marginRight="50dp"
-            android:text="Siguiente" />
+            android:text="Siguiente"
+            android:background="@drawable/botones"/>
 
         <Button
             android:id="@+id/btAtrasAddSemana"
@@ -42,7 +43,8 @@
             android:layout_marginLeft="50dp"
             android:layout_marginTop="25dp"
             android:layout_marginRight="50dp"
-            android:text="@string/btAtras" />
+            android:text="@string/btAtras"
+            android:background="@drawable/botones"/>
 
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

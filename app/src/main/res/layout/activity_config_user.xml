@@ -26,7 +26,8 @@
                 android:layout_marginRight="25dp"
                 android:layout_weight="1"
                 android:gravity="center_horizontal"
-                android:textSize="25dp" />
+                android:textSize="25dp"
+                android:background="@drawable/botones"/>
 
         </LinearLayout>
 
@@ -42,7 +43,7 @@
                 android:id="@+id/tvPeso"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#ffffff"
+                android:background="@drawable/botones"
                 android:gravity="center_horizontal|center_vertical"
                 android:text="Peso: "
                 android:textSize="25dp"
@@ -52,7 +53,7 @@
                 android:id="@+id/etPeso"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#fff"
+                android:background="@drawable/botones"
                 android:ems="10"
                 android:gravity="center"
                 android:hint="Nuevo Peso"
@@ -64,7 +65,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="25dp"
-                android:background="#fff"
+                android:background="@drawable/botones"
                 android:gravity="center"
                 android:text="Altura: "
                 android:textSize="25dp"
@@ -74,7 +75,7 @@
                 android:id="@+id/etAltura"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#fff"
+                android:background="@drawable/botones"
                 android:ems="10"
                 android:gravity="center"
                 android:hint="Nueva Altura"
@@ -88,7 +89,8 @@
                 android:layout_marginLeft="50dp"
                 android:layout_marginTop="50dp"
                 android:layout_marginRight="50dp"
-                android:text="Cambiar Contraseña" />
+                android:text="Cambiar Contraseña"
+                android:background="@drawable/botones"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -101,7 +103,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Guardar Cambios" />
+                    android:text="Guardar Cambios"
+                    android:background="@drawable/botones"/>
 
                 <Button
                     android:id="@+id/btAtrasConfigUser"
