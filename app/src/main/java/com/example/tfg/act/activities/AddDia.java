@@ -193,6 +193,7 @@ public class AddDia extends AppCompatActivity implements View.OnClickListener {
                                         intent1.putExtra("semUser", semUser);
                                         intent1.putExtra("user", user);
                                         intent1.putExtra("dia", sentDia);
+                                        intent1.putExtra("semana", semana);
                                         startActivity(intent1);
                                     }
                                 });
@@ -275,7 +276,17 @@ public class AddDia extends AppCompatActivity implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.btAnadirEj:
+                Intent intent1 = new Intent(AddDia.this, AddEjercicio.class);
+                intent1.putExtra("user", user);
+                intent1.putExtra("semUser", semUser);
+                intent1.putExtra("semana", semana);
+                if(sentDia == null){
+                    intent1.putExtra("dia", dia);
+                }else{
+                    intent1.putExtra("dia", sentDia);
+                }
 
+                startActivity(intent1);
                 break;
             case R.id.btAnadir:
                 Log.e("semanaSent", String.valueOf(semana.getId()));
@@ -290,6 +301,7 @@ public class AddDia extends AppCompatActivity implements View.OnClickListener {
                     Intent intent = new Intent(AddDia.this, EditarSemana.class);
                     intent.putExtra("user", user);
                     intent.putExtra("semUser", semUser);
+                    intent.putExtra("semana", semana);
                     startActivity(intent);
                 }
                 break;
@@ -340,7 +352,14 @@ public class AddDia extends AppCompatActivity implements View.OnClickListener {
 
                                     Map<String, Integer> paramsRutina = new HashMap<>();
                                     paramsRutina.put("id", rutina.getId());
-                                    paramsRutina.put("repeticiones", Integer.parseInt(String.valueOf(etRepeticiones.getText())));
+                                    
+                                    int reps = 0;
+                                    if(String.valueOf(etRepeticiones.getText()) == null){
+                                        reps = 0;
+                                    }else{
+                                        reps = Integer.parseInt(String.valueOf(etRepeticiones.getText()));
+                                    }
+                                    paramsRutina.put("repeticiones", reps);
                                     JSONObject jsonRutina = new JSONObject(paramsRutina);
 
                                     RequestQueue requestQueue1 = Volley.newRequestQueue(AddDia.this);

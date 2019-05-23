@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".act.activities.AddDia"></activity>
+        <activity android:name=".act.activities.AddEjercicio"></activity>
+        <activity android:name=".act.activities.AddDia" />
         <activity android:name=".act.activities.AddSemana" />
         <activity android:name=".act.activities.EditarSemana" />
         <activity android:name=".act.activities.RutinaActivity" />
