@@ -8,13 +8,14 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@drawable/fat_cat2">>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:orientation="vertical" >
+            android:orientation="vertical">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -28,6 +29,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:text="tvSemanaName"
+                    android:textColor="#8c1ec0"
                     android:textSize="25dp" />
 
                 <Button
@@ -41,15 +43,19 @@
 
             <TextView
                 android:id="@+id/textView4"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
                 android:layout_marginTop="25dp"
-                android:text="Todos los Ejercicios" />
+                android:background="#fff"
+                android:text="Todos los Ejercicios"
+                android:textColor="#8c1ec0" />
 
             <Spinner
                 android:id="@+id/spEjercicios"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="51dp"
+                android:background="#fff" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -58,12 +64,16 @@
 
                 <EditText
                     android:id="@+id/etRepeticiones"
-                    android:layout_width="wrap_content"
+                    android:layout_width="252dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:background="#fff"
                     android:ems="10"
                     android:hint="Repeticiones"
-                    android:inputType="number" />
+                    android:inputType="number"
+                    android:textColor="#8c1ec0"
+                    android:textColorHint="#b07ec7"
+                    android:textSize="25dp" />
 
                 <Button
                     android:id="@+id/btGuardar"
@@ -75,10 +85,12 @@
 
             <TextView
                 android:id="@+id/textView5"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="25dp"
-                android:text="Tus ejercicios de este dia" />
+                android:background="#fff"
+                android:text="Tus ejercicios de este dia"
+                android:textColor="#8c1ec0" />
 
             <ListView
                 android:id="@+id/lvEjercicios"

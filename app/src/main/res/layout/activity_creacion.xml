@@ -9,15 +9,17 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center_vertical"
+        android:background="@drawable/fat_cat2"
         android:orientation="vertical">
 
         <TextView
             android:id="@+id/tvNewUser"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
             android:gravity="center_horizontal"
             android:text="Nuevo Usuario"
+            android:textColor="#8c1ec0"
             android:textSize="25dp" />
 
         <LinearLayout
@@ -32,11 +34,16 @@
                 android:id="@+id/etUser"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="100dp"
                 android:layout_weight="1"
+                android:background="#fff"
                 android:ems="10"
                 android:gravity="center_horizontal"
                 android:hint="Usuario"
-                android:inputType="textPersonName" />
+                android:inputType="textPersonName"
+                android:textColor="#8c1ec0"
+                android:textColorHint="#b07ec7"
+                android:textSize="25dp" />
 
         </LinearLayout>
 
@@ -53,10 +60,14 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginRight="50dp"
                 android:layout_weight="1"
+                android:background="#fff"
                 android:ems="10"
                 android:gravity="center_horizontal"
                 android:hint="Contraseña"
-                android:inputType="textPassword" />
+                android:inputType="textPassword"
+                android:textColor="#8c1ec0"
+                android:textColorHint="#b07ec7"
+                android:textSize="25dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -72,10 +83,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="#fff"
                 android:ems="10"
                 android:gravity="center_horizontal"
                 android:hint="Confirmar Contraseña"
-                android:inputType="textPassword" />
+                android:inputType="textPassword"
+                android:textColor="#8c1ec0"
+                android:textColorHint="#b07ec7"
+                android:textSize="25dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -91,10 +106,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="#fff"
                 android:ems="10"
                 android:gravity="center"
                 android:hint="Peso"
-                android:inputType="number" />
+                android:inputType="number"
+                android:textColor="#8c1ec0"
+                android:textColorHint="#b07ec7"
+                android:textSize="25dp" />
 
         </LinearLayout>
 
@@ -110,23 +129,30 @@
                 android:id="@+id/etAltura"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background=" #fff"
                 android:ems="10"
                 android:gravity="center_horizontal"
                 android:hint="Altura(cm)"
-                android:inputType="number" />
+                android:inputType="number"
+                android:textColor="#8c1ec0"
+                android:textColorHint="#b07ec7"
+                android:textSize="25dp" />
 
             <TextView
                 android:id="@+id/textView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
+                android:background="#fff"
                 android:gravity="center_horizontal"
                 android:text="Fecha de nacimiento"
+                android:textColor="#8c1ec0"
                 android:textSize="20dp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:background="#fff"
                 android:orientation="horizontal">
 
                 <EditText
@@ -137,7 +163,9 @@
                     android:ems="10"
                     android:gravity="center_horizontal"
                     android:hint="Dia"
-                    android:inputType="number" />
+                    android:inputType="number"
+                    android:textColor="#8c1ec0"
+                    android:textColorHint="#b07ec7" />
 
                 <EditText
                     android:id="@+id/etMes"
@@ -147,7 +175,9 @@
                     android:ems="10"
                     android:gravity="center_horizontal"
                     android:hint="Mes"
-                    android:inputType="number" />
+                    android:inputType="number"
+                    android:textColor="#8c1ec0"
+                    android:textColorHint="#b07ec7" />
 
                 <EditText
                     android:id="@+id/etAnio"
@@ -157,7 +187,9 @@
                     android:ems="10"
                     android:gravity="center_horizontal"
                     android:hint="Año"
-                    android:inputType="number" />
+                    android:inputType="number"
+                    android:textColor="#8c1ec0"
+                    android:textColorHint="#b07ec7" />
 
             </LinearLayout>
 
@@ -172,6 +204,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:background="#fff"
                     android:gravity="center"
                     android:text="Sexo"
                     android:textSize="20dp" />
@@ -194,17 +227,19 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:background="#fff"
                         android:checked="true"
-                        android:text="@string/cbMujer" />
+                        android:text="@string/cbMujer"
+                        android:textColor="#8c1ec0" />
 
                     <RadioButton
                         android:id="@+id/rbHombre"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="@string/cbHombre" />
-
-
+                        android:background="#fff"
+                        android:text="@string/cbHombre"
+                        android:textColor="#8c1ec0" />
                 </RadioGroup>
 
 

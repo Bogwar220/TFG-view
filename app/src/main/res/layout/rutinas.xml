@@ -9,7 +9,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:background="#ffffff">
 
         <TextView
             android:id="@+id/tvNombreRutina"
@@ -19,7 +20,8 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="tvNombreRutina"
-            android:textSize="25dp" />
+            android:textSize="25dp"
+            android:textColor="#8c1ec0"/>
 
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

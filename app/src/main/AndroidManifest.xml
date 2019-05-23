@@ -7,12 +7,19 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:icon="@mipmap/fat_cat_icon"
+        android:label="FatCat"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".act.activities.AddEjercicio"></activity>
+        <activity android:name=".act.activities.Splash">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".act.activities.AddEjercicio" />
         <activity android:name=".act.activities.AddDia" />
         <activity android:name=".act.activities.AddSemana" />
         <activity android:name=".act.activities.EditarSemana" />
@@ -23,13 +30,7 @@
         <activity android:name=".act.activities.ConfigUser" />
         <activity android:name=".act.activities.Conectado" />
         <activity android:name=".act.activities.Creacion" />
-        <activity android:name=".act.MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".act.MainActivity"></activity>
     </application>
 
 </manifest>

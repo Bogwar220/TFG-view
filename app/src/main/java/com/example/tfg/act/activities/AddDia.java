@@ -352,7 +352,7 @@ public class AddDia extends AppCompatActivity implements View.OnClickListener {
 
                                     Map<String, Integer> paramsRutina = new HashMap<>();
                                     paramsRutina.put("id", rutina.getId());
-                                    
+
                                     int reps = 0;
                                     if(String.valueOf(etRepeticiones.getText()) == null){
                                         reps = 0;
