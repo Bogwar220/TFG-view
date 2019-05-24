@@ -28,7 +28,7 @@
                     android:layout_width="224dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
-                    android:background="@drawable/botones"
+                    android:background="#58857e"
                     android:text="tvSemanaName"
                     android:textSize="25dp"
                     android:textStyle="bold" />
@@ -66,10 +66,11 @@
 
                 <EditText
                     android:id="@+id/etRepeticiones"
+                    style="@style/EditText.Login"
                     android:layout_width="252dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    style="@style/EditText.Login"
+                    android:background="#8dbab3"
                     android:ems="10"
                     android:hint="Repeticiones"
                     android:inputType="number"

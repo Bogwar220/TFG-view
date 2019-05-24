@@ -22,12 +22,13 @@
                 android:id="@+id/tvUser"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="25dp"
-                android:layout_marginRight="25dp"
+                android:layout_marginLeft="100dp"
+                android:layout_marginRight="100dp"
                 android:layout_weight="1"
+                android:background="#58857e"
                 android:gravity="center_horizontal"
                 android:textSize="25dp"
-                android:background="@drawable/botones"/>
+                android:textStyle="bold" />
 
         </LinearLayout>
 
@@ -43,17 +44,17 @@
                 android:id="@+id/tvPeso"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/botones"
+                android:background="#58857e"
                 android:gravity="center_horizontal|center_vertical"
                 android:text="Peso: "
                 android:textSize="25dp"
-                android:textStyle="normal" />
+                android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/etPeso"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/botones"
+                android:background="#8dbab3"
                 android:ems="10"
                 android:gravity="center"
                 android:hint="Nuevo Peso"
@@ -65,17 +66,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="25dp"
-                android:background="@drawable/botones"
+                android:background="#58857e"
                 android:gravity="center"
                 android:text="Altura: "
                 android:textSize="25dp"
-                android:textStyle="normal" />
+                android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/etAltura"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/botones"
+                android:background="#8dbab3"
                 android:ems="10"
                 android:gravity="center"
                 android:hint="Nueva Altura"
@@ -111,6 +112,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:background="@drawable/botones"
                     android:text="Atras" />
             </LinearLayout>
 

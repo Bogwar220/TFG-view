@@ -23,18 +23,20 @@
 
             <TextView
                 android:id="@+id/tvUser"
-                android:layout_width="302dp"
+                android:layout_width="190dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="#58857e"
                 android:text="tvUser"
                 android:textSize="25dp"
-                android:background="@drawable/botones"/>
+                android:textStyle="bold" />
 
             <ImageButton
                 android:id="@+id/btAdd"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="@drawable/botones"
                 app:srcCompat="@android:drawable/ic_menu_add" />
         </LinearLayout>
 

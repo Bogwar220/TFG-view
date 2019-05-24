@@ -16,11 +16,14 @@
             android:id="@+id/tvNewUser"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="100dp"
             android:layout_marginTop="30dp"
+            android:layout_marginRight="100dp"
+            android:background="#58857e"
             android:gravity="center_horizontal"
             android:text="Nuevo Usuario"
             android:textSize="25dp"
-            android:background="@drawable/botones"/>
+            android:textStyle="bold" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -36,7 +39,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="100dp"
                 android:layout_weight="1"
-                android:background="@drawable/botones"
+                android:background="#8dbab3"
                 android:ems="10"
                 android:gravity="center_horizontal"
                 android:hint="Usuario"
@@ -58,7 +61,7 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginRight="50dp"
                 android:layout_weight="1"
-                android:background="@drawable/botones"
+                android:background="#8dbab3"
                 android:ems="10"
                 android:gravity="center_horizontal"
                 android:hint="Contraseña"
@@ -79,7 +82,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@drawable/botones"
+                android:background="#8dbab3"
                 android:ems="10"
                 android:gravity="center_horizontal"
                 android:hint="Confirmar Contraseña"
@@ -100,7 +103,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@drawable/botones"
+                android:background="#8dbab3"
                 android:ems="10"
                 android:gravity="center"
                 android:hint="Peso"
@@ -121,7 +124,7 @@
                 android:id="@+id/etAltura"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/botones"
+                android:background="#8dbab3"
                 android:ems="10"
                 android:gravity="center_horizontal"
                 android:hint="Altura(cm)"
@@ -133,10 +136,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:background="@drawable/botones"
+                android:background="#58857e"
                 android:gravity="center_horizontal"
                 android:text="Fecha de nacimiento"
-                android:textSize="20dp" />
+                android:textSize="20dp"
+                android:textStyle="bold" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -149,36 +153,36 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:background="#8dbab3"
                     android:ems="10"
                     android:gravity="center_horizontal"
                     android:hint="Dia"
                     android:inputType="number"
-                    android:background="@drawable/botones"
-                    android:textSize="25dp"/>
+                    android:textSize="25dp" />
 
                 <EditText
                     android:id="@+id/etMes"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:background="#8dbab3"
                     android:ems="10"
                     android:gravity="center_horizontal"
                     android:hint="Mes"
                     android:inputType="number"
-                    android:background="@drawable/botones"
-                    android:textSize="25dp"/>
+                    android:textSize="25dp" />
 
                 <EditText
                     android:id="@+id/etAnio"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:background="#8dbab3"
                     android:ems="10"
                     android:gravity="center_horizontal"
                     android:hint="Año"
                     android:inputType="number"
-                    android:background="@drawable/botones"
-                    android:textSize="25dp"/>
+                    android:textSize="25dp" />
 
             </LinearLayout>
 
@@ -193,7 +197,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="@drawable/botones"
+                    android:background="#58857e"
                     android:gravity="center"
                     android:text="Sexo"
                     android:textSize="20dp" />
@@ -216,17 +220,16 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:background="@drawable/botones"
+                        android:background="#58857e"
                         android:checked="true"
-                        android:text="@string/cbMujer"
-                        />
+                        android:text="@string/cbMujer" />
 
                     <RadioButton
                         android:id="@+id/rbHombre"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:background="@drawable/botones"
+                        android:background="#58857e"
                         android:text="@string/cbHombre" />
                 </RadioGroup>
 

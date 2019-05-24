@@ -16,11 +16,13 @@
             android:id="@+id/textView8"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="100dp"
             android:layout_marginTop="30dp"
+            android:layout_marginRight="100dp"
             android:layout_marginBottom="25dp"
+            android:background="#58857e"
             android:gravity="center"
             android:text="Nuevo Ejercicio"
-            android:textColor="#58857e"
             android:textSize="25dp"
             android:textStyle="bold" />
 
@@ -32,13 +34,11 @@
             android:layout_marginTop="25dp"
             android:layout_marginRight="25dp"
             android:layout_marginBottom="25dp"
-            android:background="@drawable/botones"
+            android:background="#8dbab3"
             android:ems="10"
             android:gravity="center"
             android:hint="Nombre"
             android:inputType="textPersonName"
-            android:textColor="#58857e"
-            android:textColorHint="#8dbab3	"
             android:textSize="25dp" />
 
         <EditText
@@ -48,7 +48,7 @@
             android:layout_marginLeft="25dp"
             android:layout_marginRight="25dp"
             android:layout_marginBottom="25dp"
-            android:background="@drawable/botones"
+            android:background="#8dbab3"
             android:ems="10"
             android:gravity="start|top"
             android:hint="Descripcion"

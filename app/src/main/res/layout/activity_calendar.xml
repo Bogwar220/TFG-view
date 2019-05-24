@@ -25,18 +25,20 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="#58857e"
                 android:text="tvUsername"
                 android:textSize="25dp"
-                android:background="@drawable/botones"/>
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/tvSemana"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="#58857e"
                 android:text="tvSemanaName"
                 android:textSize="25dp"
-                android:background="@drawable/botones"/>
+                android:textStyle="bold" />
         </LinearLayout>
 
         <LinearLayout
